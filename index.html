@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Sabrina Portofolio Website</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body class="bg-pink-200">
+
+  <!-- HEADER -->
+  <header class="header bg-purple-300 flex justify-between items-center px-10 py-4">
+    <h1 class="logo text-white font-[Brush Script MT] text-3xl">Sabrina</h1>
+    <nav class="nav flex gap-6">
+      <a href="#home" class="text-white hover:text-purple-100">Home</a>
+      <a href="#about" class="text-white hover:text-purple-100">Skill</a>
+      <a href="#projects" class="text-white hover:text-purple-100">Project</a>
+      <a href="#contact" class="text-white hover:text-purple-100">Contact</a>
+    </nav>
+  </header>
+
+  <!-- HERO SECTION -->
+  <section id="home" class="relative text-center py-32 bg-pink-300 overflow-hidden">
+    <h1 class="text-5xl font-bold text-white">Sabrina</h1>
+    <h2 class="text-4xl md:text-5xl font-extrabold text-white mt-2">PORTOFOLIO WEBSITE</h2>
+    <p class="text-white mt-4 text-lg">Frontend Developer</p>
+    <button class="btn bg-purple-300 text-white px-5 py-2 rounded-full mt-6 hover:bg-purple-400">Get Started</button>
+
+    <!-- Circle Decorations -->
+    <div class="circle circle1"></div>
+    <div class="circle circle2"></div>
+    <div class="circle circle3"></div>
+  </section>
+
+  <!-- ABOUT SECTION -->
+  <section id="about" class="section about-section py-16 bg-pink-300 overflow-hidden">
+    <div class="about-container max-w-6xl mx-auto flex flex-col md:flex-row items-center px-6 ">
+      <div class="about-text md:w-1/2 mb-10 md:mb-0">
+        <h2 class="text-3xl font-bold mb-4 text-purple-600">About Me</h2>
+        <p class="text-gray-700 leading-relaxed">
+          Hi, let me introduce myself, my name is
+          <span class="highlight font-semibold text-purple-500">Sabrina Rizki Aulia</span>,
+          usually called <span class="highlight font-semibold text-purple-500">Bina</span>. I like to draw when I have free time,
+          I also like to eat spicy food and watch random films like horror and action.
+          I’m still in the 1st year of high school and studying at
+          <span class="highlight font-semibold text-purple-500">Taruna Bhakti Vocational School</span>.
+        </p>
+        <button class="btn bg-purple-300 text-white px-4 py-2 rounded-full mt-6 hover:bg-purple-400">
+          <a href="CV/CV SABRINA RIZKI AULIA.pdf"
+           target="_blank" rel="noopener noreferrer"
+           class="bg-purple-300 hover:bg-purple-400 text-white font-semibold py-2 px-4 rounded-full transition duration-300">
+            Download CV
+            </a>
+
+        </button>
+      </div>
+      <div class="about-image md:w-1/2 flex justify-center">
+       <img src="image/poto.jpg" alt="Sabrina Rizki Aulia" class="w-72 h-72 rounded-full object-cover shadow-lg border-4 border-purple-200" />
+
+      </div>
+    </div>
+  </section>
+
+  <!-- SKILL SECTION -->
+  <section id="skills" class="section skill-section bg-purple-100 py-16">
+    <div class="skill-container max-w-6xl mx-auto text-center">
+      <h2 class="text-3xl font-bold text-purple-600 mb-10">My Skill</h2>
+      <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-8">
+        <div class="skill-card"><img src="image/JAVAWEB.jpg" alt="Java"><p>Java</p></div>
+        <div class="skill-card"><img src="image/HTMLWEB.jpg" alt="HTML"><p>HTML</p></div>
+        <div class="skill-card"><img src="image/CSSWEB.jpg" alt="CSS"><p>CSS</p></div>
+        <div class="skill-card"><img src="image/JSWEB.jpg" alt="JavaScript"><p>JS</p></div>
+        <div class="skill-card"><img src="image/AIWEB.jpg" alt="Illustrator"><p>AI</p></div>
+        <div class="skill-card"><img src="image/PSWEB.jpg" alt="Photoshop"><p>PS</p></div>
+        <div class="skill-card"><img src="image/PYWEB.jpg" alt="Python"><p>Python</p></div>
+        <div class="skill-card"><img src="image/ctang.jpg" alt="C#"><p>C#</p></div>
+        <div class="skill-card"><img src="image/flutter.jpg" alt="Swift"><p>Flutter</p></div>
+        <div class="skill-card"><img src="image/C++.jpg" alt="C++"><p>C++</p></div>
+      </div>
+    </div>
+  </section>
+<section class="bg-pink-200 py-20">
+  <h2 class="text-center text-3xl font-bold text-pink-600 mb-12">My Project</h2>
+  <!-- PROJECT 1 -->
+  <div class="flex flex-col md:flex-row items-center justify-center gap-10 mb-16">
+    <div class="flex gap-6">
+    <img src="image/JP2.jpg" alt="Project 1 Desktop" class="w-72 md:w-80 rounded-2xl shadow-xl hover:scale-105 transition-transform duration-300">
+    <img src="image/PJ3.jpg" alt="Project 1 Mobile" class="w-32 md:w-36 rounded-2xl shadow-md hover:scale-110 transition-transform duration-300">
+    </div>
+    <div class="max-w-md text-center md:text-left">
+    <h3 class="text-xl font-semibold text-pink-700 mb-3">My Project 1</h3>
+    <p class="text-gray-700">
+    This application was made by me and my group friend named Lana.  
+    We used the color purple because it is unique.
+    </p>
+    <a href="https://www.figma.com/design/wMtpLEuzW1Rb62DUMVDlJ5/Aplikasi-EasyHelp?node-id=0-1&p=f" target="_blank" rel="noopener noreferrer"
+    class="mt-4 inline-block bg-purple-400 text-white py-2 px-4 rounded-full hover:bg-purple-500 transition">See Project</a>
+    </div>
+    </div>
+
+  <!-- PROJECT 2 -->
+  <div class="flex flex-col md:flex-row-reverse items-center justify-center gap-10 mb-16">
+    <div class="flex gap-6">
+    <img src="image/JP2.jpg" alt="Project 2 Desktop" class="w-72 md:w-80 rounded-2xl shadow-xl hover:scale-105 transition-transform duration-300">
+    <img src="image/PJ3.jpg" alt="Project 2 Mobile" class="w-32 md:w-36 rounded-2xl shadow-md hover:scale-110 transition-transform duration-300">
+    </div>
+    <div class="max-w-md text-center md:text-right">
+    <h3 class="text-xl font-semibold text-pink-700 mb-3">My Project 2</h3>
+    <p class="text-gray-700">
+    Another creative app I developed in collaboration with my teammate.  
+    The color scheme keeps it soft and fun.
+    <a href="https://www.figma.com/design/wMtpLEuzW1Rb62DUMVDlJ5/Aplikasi-EasyHelp?node-id=0-1&p=f" target="_blank" rel="noopener noreferrer"
+    class="mt-4 inline-block bg-purple-400 text-white py-2 px-4 rounded-full hover:bg-purple-500 transition">See Project</a>
+    </div>
+    </div>
+    </section>
+
+   <!-- PROJECT 3 -->
+   <div class="flex flex-col md:flex-row items-center justify-center gap-10 mb-16">
+    <div class="flex gap-6">
+    <img src="image/JP2.jpg" alt="Project 1 Desktop" class="w-72 md:w-80 rounded-2xl shadow-xl hover:scale-105 transition-transform duration-300">
+    <img src="image/PJ3.jpg" alt="Project 1 Mobile" class="w-32 md:w-36 rounded-2xl shadow-md hover:scale-110 transition-transform duration-300">
+    </div>
+    <div class="max-w-md text-center md:text-left">
+    <h3 class="text-xl font-semibold text-pink-700 mb-3">My Project 3</h3>
+    <p class="text-gray-700">
+    This application was made by me and my group friend named Lana.  
+    We used the color purple because it is unique.
+    </p>
+    <a href="https://www.figma.com/design/wMtpLEuzW1Rb62DUMVDlJ5/Aplikasi-EasyHelp?node-id=0-1&p=f" target="_blank" rel="noopener noreferrer"
+    class="mt-4 inline-block bg-purple-400 text-white py-2 px-4 rounded-full hover:bg-purple-500 transition">See Project</a>
+    </div>
+    </div>
+
+  <!-- PROJECT 4 -->
+  <div class="flex flex-col md:flex-row-reverse items-center justify-center gap-10 mb-16">
+    <div class="flex gap-6">
+    <img src="image/JP2.jpg" alt="Project 2 Desktop" class="w-72 md:w-80 rounded-2xl shadow-xl hover:scale-105 transition-transform duration-300">
+    <img src="image/PJ3.jpg" alt="Project 2 Mobile" class="w-32 md:w-36 rounded-2xl shadow-md hover:scale-110 transition-transform duration-300">
+    </div>
+    <div class="max-w-md text-center md:text-right">
+    <h3 class="text-xl font-semibold text-pink-700 mb-3">My Project 4</h3>
+    <p class="text-gray-700">
+    Another creative app I developed in collaboration with my teammate.  
+    The color scheme keeps it soft and fun.
+    <a href="https://www.figma.com/design/wMtpLEuzW1Rb62DUMVDlJ5/Aplikasi-EasyHelp?node-id=0-1&p=f" target="_blank" rel="noopener noreferrer"
+    class="mt-4 inline-block bg-purple-400 text-white py-2 px-4 rounded-full hover:bg-purple-500 transition">See Project</a>
+    </div>
+    </div>
+    </section>
+
+
+  <!-- CONTACT SECTION -->
+  <section id="contact" class="section contact-section bg-purple-100 py-16">
+    <div class="contact-container max-w-6xl mx-auto flex flex-col md:flex-row justify-between items-center px-6">
+      <form class="contact-form flex flex-col gap-4 w-full md:w-1/2">
+        <input type="text" placeholder="Your Name" class="p-3 border border-purple-300 rounded-lg focus:outline-purple-400">
+        <input type="email" placeholder="Your Email" class="p-3 border border-purple-300 rounded-lg focus:outline-purple-400">
+        <textarea rows="4" placeholder="Your Message" class="p-3 border border-purple-300 rounded-lg focus:outline-purple-400"></textarea>
+        <button type="submit" class="btn bg-purple-300 text-white py-2 rounded-full hover:bg-purple-400">Submit</button>
+      </form>
+
+      <div class="contact-img mt-10 md:mt-0 md:w-1/2 flex justify-center">
+        <img src="file:///C:/Users/admin/Downloads/data-storage-3-80.svg" alt="Contact illustration" class="w-64">
+      </div>
+    </div>
+
+    <footer class="footer text-center mt-10">
+      <p class="text-purple-600 font-semibold">Let's Connect To My Social Media</p>
+      <div class="socials flex justify-center gap-6 mt-3 text-2xl text-purple-500">
+        <a href="#"><i class="fab fa-instagram hover:text-purple-700"></i></a>
+        <a href="#"><i class="fab fa-twitter hover:text-purple-700"></i></a>
+      </div>
+      <p class="text-gray-600 mt-4 text-sm">©2024 Made By Sabrina</p>
+    </footer>
+  </section>
+</body>
+</html>

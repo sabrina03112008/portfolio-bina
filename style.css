@@ -1,0 +1,262 @@
+/* === Global Reset === */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: 'Poppins', sans-serif;
+  background-color: #fbcfe8; /* pink-200 */
+  color: #333;
+  overflow-x: hidden;
+}
+
+/* === HEADER === */
+.header {
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  background-color: rgba(192, 132, 252, 0.95); /* purple-300 */
+  backdrop-filter: blur(8px);
+  transition: background 0.3s ease;
+}
+
+.header .logo {
+  font-family: 'Brush Script MT', cursive;
+  letter-spacing: 2px;
+}
+
+.nav a {
+  position: relative;
+  transition: 0.3s ease;
+  font-weight: 500;
+}
+
+.nav a::after {
+  content: "";
+  position: absolute;
+  width: 0%;
+  height: 2px;
+  bottom: -4px;
+  left: 0;
+  background-color: white;
+  transition: 0.3s ease;
+}
+
+.nav a:hover::after {
+  width: 100%;
+}
+
+/* === HERO SECTION === */
+#home {
+  position: relative;
+  overflow: hidden;
+}
+
+#home h1 {
+  text-shadow: 2px 2px 8px rgba(0,0,0,0.2);
+}
+
+#home .btn {
+  transition: transform 0.3s ease;
+}
+
+#home .btn:hover {
+  transform: scale(1.05);
+}
+
+/* Circle decorations */
+.circle {
+  position: absolute;
+  border-radius: 50%;
+  opacity: 0.25;
+  z-index: 0;
+  animation: float 10s ease-in-out infinite;
+}
+
+.circle1 {
+  width: 300px;
+  height: 300px;
+  background: #c084fc;
+  top: -80px;
+  left: -100px;
+}
+
+.circle2 {
+  width: 200px;
+  height: 200px;
+  background: #f9a8d4;
+  bottom: 50px;
+  right: 80px;
+}
+
+.circle3 {
+  width: 150px;
+  height: 150px;
+  background: #a78bfa;
+  top: 40%;
+  left: 60%;
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-20px); }
+}
+
+/* === ABOUT SECTION === */
+.about-section {
+  background-color: #fff;
+}
+
+.about-text p {
+  font-size: 1rem;
+  line-height: 1.7;
+  color: #4b5563; /* gray-700 */
+}
+
+.about-text .highlight {
+  color: #9333ea;
+}
+
+.about-image img {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.about-image img:hover {
+  transform: scale(1.05);
+  box-shadow: 0 8px 20px rgba(147, 51, 234, 0.4);
+}
+
+/* === SKILL SECTION === */
+.skill-section {
+  background-color: #f3e8ff; /* purple-100 */
+}
+
+.skill-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 1rem;
+  background-color: white;
+  border-radius: 1rem;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+  transition: all 0.3s ease;
+}
+
+.skill-card img {
+  width: 60px;
+  height: 60px;
+  object-fit: contain;
+}
+
+.skill-card p {
+  font-weight: 500;
+  color: #6b21a8;
+}
+
+.skill-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 8px 20px rgba(147, 51, 234, 0.2);
+}
+
+/* === PROJECT SECTION === */
+.project-section {
+  background-color: #fff;
+}
+
+.project-box {
+  transition: transform 0.3s ease;
+}
+
+.project-box:hover {
+  transform: scale(1.02);
+}
+
+.project-text p {
+  line-height: 1.6;
+  color: #4b5563;
+}
+
+.project-image img {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.project-image img:hover {
+  transform: scale(1.05);
+  box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+}
+
+/* === CONTACT SECTION === */
+.contact-section {
+  background-color: #f3e8ff;
+}
+
+.contact-form input,
+.contact-form textarea {
+  background-color: #fff;
+  border: 1px solid #d8b4fe;
+  color: #4b5563;
+  font-size: 1rem;
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus {
+  border-color: #9333ea;
+  box-shadow: 0 0 6px rgba(147, 51, 234, 0.3);
+}
+
+.contact-form button {
+  transition: all 0.3s ease;
+}
+
+.contact-form button:hover {
+  transform: scale(1.05);
+}
+
+/* === FOOTER === */
+.footer {
+  margin-top: 3rem;
+}
+
+.footer .socials a {
+  transition: transform 0.3s ease, color 0.3s ease;
+}
+
+.footer .socials a:hover {
+  transform: scale(1.2);
+  color: #9333ea;
+}
+
+/* === RESPONSIVE === */
+@media (max-width: 768px) {
+  .header {
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+
+  .nav {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  #home h1 {
+    font-size: 2.5rem;
+  }
+
+  #home h2 {
+    font-size: 1.8rem;
+  }
+
+  .about-container,
+  .project-box,
+  .contact-container {
+    flex-direction: column;
+  }
+
+  .project-image {
+    flex-direction: column;
+  }
+}
