@@ -6,44 +6,44 @@
   <title>Sabrina · Portfolio</title>
   <script src="https://cdn.tailwindcss.com"></script>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" />
-  <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&family=Dancing+Script:wght@400;700&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
   <style>
-    /* ===== RESET & BASE ===== */
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
-    html {
-      scroll-behavior: smooth;
-    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
     body {
-      font-family: 'Quicksand', sans-serif;
-      background: linear-gradient(135deg, #fce4ec, #f3e5f5, #e8eaf6);
-      color: #4a2c4a;
+      font-family: 'Inter', sans-serif;
+      color: #2d1b2d;
       overflow-x: hidden;
       min-height: 100vh;
+      background: #faf0f3;
+    }
+    ::-webkit-scrollbar { width: 10px; }
+    ::-webkit-scrollbar-track { background: #faf0f3; }
+    ::-webkit-scrollbar-thumb { background: linear-gradient(180deg, #f5a0b0, #e87a9a, #d45a7a); border-radius: 20px; }
+
+    /* Background dengan image soft */
+    .hero-bg {
+      background: linear-gradient(135deg, rgba(250, 240, 243, 0.88), rgba(255, 245, 248, 0.88)), 
+                  url('https://images.unsplash.com/photo-1526047932273-341f2a7631f9?w=1600&q=80') center/cover fixed;
+      position: relative;
+    }
+    .section-bg-light {
+      background: linear-gradient(135deg, rgba(255, 248, 250, 0.94), rgba(250, 240, 243, 0.94)),
+                  url('https://images.unsplash.com/photo-1526047932273-341f2a7631f9?w=1600&q=80') center/cover fixed;
+    }
+    .section-bg-white {
+      background: rgba(255, 248, 250, 0.92);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
     }
 
-    /* ===== SCROLLBAR ===== */
-    ::-webkit-scrollbar {
-      width: 10px;
-    }
-    ::-webkit-scrollbar-track {
-      background: #fce4ec;
-    }
-    ::-webkit-scrollbar-thumb {
-      background: linear-gradient(180deg, #f8bbd0, #ce93d8, #90caf9);
-      border-radius: 20px;
-    }
-
-    /* ===== HEADER GLASS ===== */
+    /* Header baru */
     .header-glass {
-      background: rgba(255, 248, 250, 0.85);
-      backdrop-filter: blur(20px) saturate(200%);
-      -webkit-backdrop-filter: blur(20px) saturate(200%);
-      border-bottom: 2px solid rgba(206, 147, 216, 0.3);
-      box-shadow: 0 4px 30px rgba(206, 147, 216, 0.1);
+      background: rgba(255, 248, 250, 0.92);
+      backdrop-filter: blur(16px) saturate(180%);
+      -webkit-backdrop-filter: blur(16px) saturate(180%);
+      border-bottom: 1px solid rgba(232, 122, 154, 0.15);
+      box-shadow: 0 2px 30px rgba(232, 122, 154, 0.06);
       position: fixed;
       width: 100%;
       top: 0;
@@ -51,29 +51,23 @@
       transition: 0.3s;
     }
     .logo-modern {
-      font-family: 'Dancing Script', cursive;
+      font-family: 'Playfair Display', serif;
       font-weight: 700;
-      font-size: 2rem;
-      background: linear-gradient(135deg, #ec407a, #ab47bc, #42a5f5);
+      font-size: 1.8rem;
+      background: linear-gradient(135deg, #d45a7a, #e87a9a);
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
       background-clip: text;
-      letter-spacing: -0.02em;
-      animation: gradientMove 4s ease infinite;
-      background-size: 300% 300%;
-    }
-    @keyframes gradientMove {
-      0% { background-position: 0% 50%; }
-      50% { background-position: 100% 50%; }
-      100% { background-position: 0% 50%; }
+      letter-spacing: -0.5px;
     }
     .nav-modern a {
       position: relative;
-      font-weight: 600;
-      font-size: 0.95rem;
-      color: #6a4a6a;
+      font-weight: 500;
+      font-size: 0.9rem;
+      color: #5a3a5a;
       transition: 0.3s;
       padding: 0.3rem 0;
+      letter-spacing: 0.3px;
     }
     .nav-modern a::after {
       content: '';
@@ -81,465 +75,254 @@
       left: 0;
       bottom: -2px;
       width: 0;
-      height: 3px;
-      background: linear-gradient(90deg, #ec407a, #ab47bc, #42a5f5);
+      height: 2px;
+      background: linear-gradient(90deg, #d45a7a, #e87a9a);
       transition: 0.3s ease;
-      border-radius: 4px;
+      border-radius: 2px;
     }
-    .nav-modern a:hover {
-      color: #ab47bc;
-    }
-    .nav-modern a:hover::after {
-      width: 100%;
-    }
+    .nav-modern a:hover { color: #d45a7a; }
+    .nav-modern a:hover::after { width: 100%; }
 
-    /* ===== BUTTONS ===== */
+    /* Buttons baru */
     .btn-primary {
-      background: linear-gradient(135deg, #f06292, #ce93d8);
+      background: linear-gradient(135deg, #d45a7a, #e87a9a);
       color: white;
-      padding: 0.8rem 2.5rem;
-      border-radius: 60px;
+      padding: 0.85rem 2.8rem;
+      border-radius: 50px;
       font-weight: 600;
-      letter-spacing: 0.02em;
-      transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
-      box-shadow: 0 8px 30px rgba(206, 147, 216, 0.3);
+      font-size: 0.95rem;
+      transition: all 0.35s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+      box-shadow: 0 6px 30px rgba(212, 90, 122, 0.25);
       border: none;
       cursor: pointer;
       display: inline-block;
       text-decoration: none;
-      position: relative;
-      overflow: hidden;
-    }
-    .btn-primary::before {
-      content: '';
-      position: absolute;
-      top: -50%;
-      left: -50%;
-      width: 200%;
-      height: 200%;
-      background: radial-gradient(circle, rgba(255,255,255,0.2), transparent 70%);
-      transform: rotate(45deg);
-      transition: 0.5s;
-    }
-    .btn-primary:hover::before {
-      transform: rotate(45deg) translate(50%, 50%);
+      letter-spacing: 0.3px;
     }
     .btn-primary:hover {
-      transform: translateY(-4px) scale(1.05);
-      box-shadow: 0 16px 40px rgba(206, 147, 216, 0.4);
+      transform: translateY(-3px) scale(1.03);
+      box-shadow: 0 12px 40px rgba(212, 90, 122, 0.35);
     }
     .btn-outline {
       background: transparent;
-      border: 2px solid #ce93d8;
-      color: #8e5a8e;
-      padding: 0.7rem 2rem;
-      border-radius: 60px;
+      border: 2px solid #d45a7a;
+      color: #d45a7a;
+      padding: 0.75rem 2.2rem;
+      border-radius: 50px;
       font-weight: 600;
-      transition: all 0.3s ease;
+      font-size: 0.95rem;
+      transition: all 0.35s ease;
       cursor: pointer;
       display: inline-block;
       text-decoration: none;
-      box-shadow: 0 0 20px rgba(206, 147, 216, 0.1);
+      letter-spacing: 0.3px;
     }
     .btn-outline:hover {
-      background: #ce93d8;
+      background: #d45a7a;
       color: white;
-      transform: translateY(-4px) scale(1.05);
-      box-shadow: 0 16px 40px rgba(206, 147, 216, 0.3);
+      transform: translateY(-3px) scale(1.03);
+      box-shadow: 0 12px 40px rgba(212, 90, 122, 0.25);
     }
 
-    /* ===== SECTION TITLE ===== */
+    /* Section Title baru */
     .section-title {
-      font-size: 2.8rem;
+      font-family: 'Playfair Display', serif;
+      font-size: 2.6rem;
       font-weight: 700;
-      color: #4a2c4a;
-      letter-spacing: -0.02em;
+      color: #2d1b2d;
+      letter-spacing: -0.5px;
       position: relative;
       display: inline-block;
     }
     .section-title::after {
-      content: '✦';
+      content: '';
       position: absolute;
-      bottom: -15px;
+      bottom: -10px;
       left: 50%;
       transform: translateX(-50%);
-      font-size: 1.5rem;
-      color: #ec407a;
-      animation: twinkle 1.5s ease-in-out infinite;
-    }
-    @keyframes twinkle {
-      0%, 100% { opacity: 1; transform: translateX(-50%) scale(1); }
-      50% { opacity: 0.3; transform: translateX(-50%) scale(0.8); }
+      width: 60px;
+      height: 3px;
+      background: linear-gradient(90deg, #d45a7a, #f5a0b0);
+      border-radius: 2px;
     }
 
-    /* ===== SKILL CARDS ===== */
-    .skill-card-modern {
-      background: rgba(255, 255, 255, 0.6);
-      backdrop-filter: blur(10px);
-      -webkit-backdrop-filter: blur(10px);
-      border: 2px solid rgba(255, 255, 255, 0.6);
-      border-radius: 28px;
-      padding: 1.5rem 0.8rem;
+    /* Skill Cards baru */
+    .skill-card {
+      background: rgba(255, 255, 255, 0.75);
+      backdrop-filter: blur(8px);
+      -webkit-backdrop-filter: blur(8px);
+      border: 1px solid rgba(232, 122, 154, 0.1);
+      border-radius: 16px;
+      padding: 1.5rem 1rem;
       transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
-      box-shadow: 0 8px 32px rgba(206, 147, 216, 0.1);
+      box-shadow: 0 2px 20px rgba(212, 90, 122, 0.04);
+      text-align: center;
       cursor: default;
-      position: relative;
-      overflow: hidden;
-      text-align: center;
     }
-    .skill-card-modern::before {
-      content: '';
-      position: absolute;
-      top: 0;
-      left: 0;
-      right: 0;
-      bottom: 0;
-      background: linear-gradient(135deg, rgba(240, 98, 146, 0.08), rgba(206, 147, 216, 0.08), rgba(144, 202, 249, 0.08));
-      opacity: 0;
-      transition: 0.5s;
-      border-radius: 28px;
+    .skill-card:hover {
+      transform: translateY(-6px);
+      border-color: #e87a9a;
+      box-shadow: 0 12px 40px rgba(212, 90, 122, 0.1);
+      background: rgba(255, 255, 255, 0.92);
     }
-    .skill-card-modern:hover::before {
-      opacity: 1;
-    }
-    .skill-card-modern:hover {
-      transform: translateY(-10px) scale(1.05) rotate(2deg);
-      border-color: #ce93d8;
-      box-shadow: 0 20px 50px rgba(206, 147, 216, 0.2);
-      background: rgba(255, 255, 255, 0.8);
-    }
-    .skill-card-modern .skill-icon {
-      font-size: 2.5rem;
-      margin-bottom: 0.5rem;
+    .skill-card .skill-icon {
+      font-size: 2.2rem;
       display: block;
-      position: relative;
-      z-index: 1;
-      transition: 0.3s;
+      margin-bottom: 0.5rem;
     }
-    .skill-card-modern:hover .skill-icon {
-      transform: scale(1.15) rotate(-5deg);
-    }
-    .skill-card-modern p {
+    .skill-card p {
       font-weight: 600;
-      font-size: 0.85rem;
-      color: #5a3a5a;
-      margin-top: 0.3rem;
-      letter-spacing: 0.02em;
-      position: relative;
-      z-index: 1;
+      font-size: 0.8rem;
+      color: #4a2c4a;
+      letter-spacing: 0.3px;
     }
+    .skill-html { color: #e88b9c; }
+    .skill-css { color: #7fb7d9; }
+    .skill-js { color: #f3cf7a; }
+    .skill-react { color: #7fc9e6; }
+    .skill-reactnative { color: #7fc9e6; }
+    .skill-node { color: #82c9a8; }
+    .skill-express { color: #b08a8a; }
+    .skill-next { color: #8a7a8a; }
+    .skill-mysql { color: #b0a8c9; }
+    .skill-supabase { color: #8bc9b0; }
+    .skill-tailwind { color: #7fc9d9; }
+    .skill-git { color: #e8a0a0; }
+    .skill-github { color: #8a7a8a; }
+    .skill-restapi { color: #e8b08a; }
+    .skill-figma { color: #d9a8c9; }
 
-    /* Warna icon per skill - Soft Pastel */
-    .skill-html { color: #e34f26; }
-    .skill-css { color: #1572b6; }
-    .skill-js { color: #f7df1e; }
-    .skill-react { color: #61dafb; }
-    .skill-reactnative { color: #61dafb; }
-    .skill-node { color: #339933; }
-    .skill-express { color: #000000; }
-    .skill-next { color: #000000; }
-    .skill-mysql { color: #4479a1; }
-    .skill-supabase { color: #3ecf8e; }
-    .skill-tailwind { color: #06b6d4; }
-    .skill-git { color: #f05032; }
-    .skill-github { color: #181717; }
-    .skill-restapi { color: #ff6c37; }
-    .skill-figma { color: #f24e1e; }
-
-    /* ===== PROJECT IMAGES ===== */
-    .project-img-desktop {
-      border-radius: 24px;
-      box-shadow: 0 20px 50px rgba(206, 147, 216, 0.15);
-      transition: all 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94);
-      border: 3px solid rgba(255, 255, 255, 0.6);
-    }
-    .project-img-desktop:hover {
-      transform: scale(1.05) translateY(-8px);
-      box-shadow: 0 30px 60px rgba(206, 147, 216, 0.2);
-      border-color: #ce93d8;
-    }
-    .project-img-mobile {
+    /* Project Cards baru */
+    .project-card {
+      background: rgba(255, 255, 255, 0.75);
+      backdrop-filter: blur(8px);
+      -webkit-backdrop-filter: blur(8px);
+      border: 1px solid rgba(232, 122, 154, 0.08);
       border-radius: 20px;
-      box-shadow: 0 12px 40px rgba(206, 147, 216, 0.12);
-      transition: all 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94);
-      border: 3px solid rgba(255, 255, 255, 0.6);
+      padding: 1.5rem;
+      transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+      box-shadow: 0 2px 20px rgba(212, 90, 122, 0.04);
     }
-    .project-img-mobile:hover {
-      transform: scale(1.06) translateY(-6px);
-      box-shadow: 0 20px 50px rgba(206, 147, 216, 0.18);
-      border-color: #ce93d8;
+    .project-card:hover {
+      transform: translateY(-6px);
+      border-color: #e87a9a;
+      box-shadow: 0 16px 50px rgba(212, 90, 122, 0.08);
+      background: rgba(255, 255, 255, 0.92);
+    }
+    .project-img {
+      border-radius: 14px;
+      box-shadow: 0 4px 20px rgba(212, 90, 122, 0.06);
+      transition: all 0.5s ease;
+      width: 100%;
+      height: 200px;
+      object-fit: cover;
+      border: 1px solid rgba(255, 255, 255, 0.4);
+    }
+    .project-card:hover .project-img {
+      transform: scale(1.02);
+      border-color: #e87a9a;
+    }
+    .project-card h3 {
+      font-family: 'Playfair Display', serif;
+      font-weight: 700;
+      font-size: 1.5rem;
+      color: #2d1b2d;
+      margin-top: 1rem;
+    }
+    .project-card p {
+      font-size: 0.9rem;
+      color: #5a3a5a;
+      line-height: 1.6;
+      margin-top: 0.3rem;
     }
 
-    /* ===== SOCIAL CARDS ===== */
+    /* Social Cards baru */
     .social-card {
-      background: rgba(255, 255, 255, 0.5);
-      backdrop-filter: blur(10px);
-      -webkit-backdrop-filter: blur(10px);
-      border: 2px solid rgba(255, 255, 255, 0.4);
-      border-radius: 28px;
+      background: rgba(255, 255, 255, 0.75);
+      backdrop-filter: blur(8px);
+      -webkit-backdrop-filter: blur(8px);
+      border: 1px solid rgba(232, 122, 154, 0.08);
+      border-radius: 20px;
       padding: 2rem 1.5rem;
-      transition: all 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94);
-      position: relative;
-      overflow: hidden;
-      width: 180px;
+      transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
       text-align: center;
-    }
-    .social-card::before {
-      content: '';
-      position: absolute;
-      top: -50%;
-      left: -50%;
-      width: 200%;
-      height: 200%;
-      background: radial-gradient(circle, rgba(255,255,255,0.1), transparent 70%);
-      transform: rotate(45deg);
-      transition: 0.8s;
-      opacity: 0;
-    }
-    .social-card:hover::before {
-      opacity: 1;
-      transform: rotate(45deg) translate(30%, 30%);
+      width: 180px;
     }
     .social-card:hover {
-      transform: translateY(-12px) scale(1.05);
-      box-shadow: 0 25px 60px rgba(206, 147, 216, 0.25);
+      transform: translateY(-6px);
+      border-color: #e87a9a;
+      box-shadow: 0 16px 50px rgba(212, 90, 122, 0.08);
+      background: rgba(255, 255, 255, 0.92);
     }
     .social-card .icon-wrapper {
-      width: 70px;
-      height: 70px;
+      width: 65px;
+      height: 65px;
       margin: 0 auto 1rem;
       border-radius: 50%;
       display: flex;
       align-items: center;
       justify-content: center;
-      font-size: 2.2rem;
+      font-size: 1.8rem;
       color: white;
-      transition: 0.5s;
-      box-shadow: 0 8px 25px rgba(0,0,0,0.1);
-      position: relative;
-      z-index: 1;
-    }
-    .social-card:hover .icon-wrapper {
-      transform: scale(1.1) rotate(-10deg);
-    }
-    .social-card .icon-wrapper.github {
-      background: linear-gradient(135deg, #6c5ce7, #a29bfe);
-    }
-    .social-card .icon-wrapper.whatsapp {
-      background: linear-gradient(135deg, #00b894, #00cec9);
-    }
-    .social-card .icon-wrapper.instagram {
-      background: linear-gradient(135deg, #f093fb, #f5576c, #4facfe);
-    }
-    .social-card h3 {
-      font-weight: 700;
-      font-size: 1.1rem;
-      color: #4a2c4a;
-      position: relative;
-      z-index: 1;
-    }
-    .social-card p {
-      font-size: 0.8rem;
-      color: #7a5a7a;
-      margin-top: 0.2rem;
-      position: relative;
-      z-index: 1;
-    }
-    .social-card .follow-btn {
-      display: inline-block;
-      margin-top: 0.8rem;
-      padding: 0.4rem 1.2rem;
-      border-radius: 30px;
-      font-size: 0.75rem;
-      font-weight: 600;
       transition: 0.3s;
-      position: relative;
-      z-index: 1;
-      background: rgba(255,255,255,0.3);
-      backdrop-filter: blur(4px);
-      border: 1px solid rgba(255,255,255,0.3);
-      color: #5a3a5a;
+      box-shadow: 0 4px 20px rgba(212, 90, 122, 0.1);
     }
-    .social-card:hover .follow-btn {
-      background: rgba(255,255,255,0.8);
-      transform: scale(1.05);
-    }
+    .social-card:hover .icon-wrapper { transform: scale(1.05) rotate(-3deg); }
+    .social-card .icon-wrapper.github { background: linear-gradient(135deg, #d45a7a, #e87a9a); }
+    .social-card .icon-wrapper.whatsapp { background: linear-gradient(135deg, #e87a9a, #f5a0b0); }
+    .social-card .icon-wrapper.instagram { background: linear-gradient(135deg, #f5a0b0, #d45a7a, #e87a9a); }
+    .social-card h3 { font-weight: 600; font-size: 1rem; color: #2d1b2d; letter-spacing: 0.3px; }
+    .social-card p { font-size: 0.75rem; color: #7a5a7a; margin-top: 0.2rem; }
 
-    /* ===== DECORATIVE CIRCLES ===== */
-    .circle-deco {
+    /* Decorative Elements baru */
+    .floating-shape {
       position: absolute;
       border-radius: 50%;
       pointer-events: none;
       z-index: 0;
-      animation: floatCircle 8s ease-in-out infinite;
+      animation: float 10s ease-in-out infinite;
     }
-    @keyframes floatCircle {
-      0%, 100% { transform: translate(0, 0) scale(1); }
-      50% { transform: translate(30px, -30px) scale(1.1); }
-    }
-    .circle-deco-1 {
-      width: 400px;
-      height: 400px;
-      background: radial-gradient(circle, rgba(240, 98, 146, 0.1), transparent 70%);
-      top: -100px;
-      right: -80px;
-      animation-delay: 0s;
-    }
-    .circle-deco-2 {
-      width: 500px;
-      height: 500px;
-      background: radial-gradient(circle, rgba(206, 147, 216, 0.08), transparent 70%);
-      bottom: -150px;
-      left: -120px;
-      animation-delay: 2s;
-    }
-    .circle-deco-3 {
-      width: 250px;
-      height: 250px;
-      background: radial-gradient(circle, rgba(66, 165, 245, 0.08), transparent 70%);
-      bottom: 20%;
-      right: 5%;
-      animation-delay: 4s;
-    }
-    .circle-deco-4 {
-      width: 180px;
-      height: 180px;
-      background: radial-gradient(circle, rgba(240, 98, 146, 0.06), transparent 70%);
-      top: 30%;
-      left: 2%;
-      animation-delay: 1s;
-    }
-
-    /* ===== HERO ANIMATION ===== */
     @keyframes float {
-      0%, 100% { transform: translateY(0px) rotate(0deg); }
-      50% { transform: translateY(-15px) rotate(2deg); }
+      0%, 100% { transform: translate(0, 0) scale(1); }
+      50% { transform: translate(20px, -20px) scale(1.05); }
     }
-    .hero-float {
-      animation: float 5s ease-in-out infinite;
-    }
+    .shape-1 { width: 250px; height: 250px; background: radial-gradient(circle, rgba(232, 122, 154, 0.06), transparent 70%); top: -60px; right: -40px; }
+    .shape-2 { width: 350px; height: 350px; background: radial-gradient(circle, rgba(212, 90, 122, 0.05), transparent 70%); bottom: -100px; left: -80px; animation-delay: 3s; }
+    .shape-3 { width: 180px; height: 180px; background: radial-gradient(circle, rgba(245, 160, 176, 0.05), transparent 70%); bottom: 25%; right: 5%; animation-delay: 6s; }
 
-    @keyframes pulseGlow {
-      0%, 100% { opacity: 0.5; }
-      50% { opacity: 1; }
+    /* Hero Animation */
+    @keyframes heroFloat {
+      0%, 100% { transform: translateY(0px); }
+      50% { transform: translateY(-12px); }
     }
-    .pulse-glow {
-      animation: pulseGlow 2s ease-in-out infinite;
-    }
+    .hero-float { animation: heroFloat 6s ease-in-out infinite; }
 
-    /* ===== BADGE ===== */
-    .badge-modern {
-      background: linear-gradient(135deg, rgba(240, 98, 146, 0.15), rgba(206, 147, 216, 0.15));
-      border: 1px solid rgba(206, 147, 216, 0.2);
-      color: #8e5a8e;
-      padding: 0.3rem 1rem;
-      border-radius: 20px;
-      font-size: 0.7rem;
-      font-weight: 600;
-      text-transform: uppercase;
-      letter-spacing: 0.05em;
-    }
-
-    /* ===== RESPONSIVE ===== */
+    /* Responsive */
     @media (max-width: 768px) {
-      .section-title {
-        font-size: 2rem;
-      }
-      .header-glass {
-        padding: 0.75rem 1rem;
-      }
-      .logo-modern {
-        font-size: 1.5rem;
-      }
-      .nav-modern {
-        gap: 1rem;
-      }
-      .nav-modern a {
-        font-size: 0.8rem;
-      }
-      .social-card {
-        width: 140px;
-        padding: 1.5rem 1rem;
-      }
-      .social-card .icon-wrapper {
-        width: 55px;
-        height: 55px;
-        font-size: 1.6rem;
-      }
-      .skill-card-modern .skill-icon {
-        font-size: 2rem;
-      }
+      .section-title { font-size: 2rem; }
+      .header-glass { padding: 0.75rem 1rem; }
+      .logo-modern { font-size: 1.4rem; }
+      .nav-modern { gap: 0.8rem; }
+      .nav-modern a { font-size: 0.75rem; }
+      .social-card { width: 130px; padding: 1.2rem 1rem; }
+      .social-card .icon-wrapper { width: 50px; height: 50px; font-size: 1.4rem; }
+      .project-img { height: 160px; }
+      .project-card h3 { font-size: 1.2rem; }
     }
     @media (max-width: 480px) {
-      .nav-modern {
-        gap: 0.6rem;
-      }
-      .nav-modern a {
-        font-size: 0.7rem;
-      }
-      .social-card {
-        width: 110px;
-        padding: 1rem 0.8rem;
-      }
-      .social-card .icon-wrapper {
-        width: 45px;
-        height: 45px;
-        font-size: 1.3rem;
-      }
-      .social-card h3 {
-        font-size: 0.85rem;
-      }
-      .social-card p {
-        font-size: 0.65rem;
-      }
-      .social-card .follow-btn {
-        font-size: 0.6rem;
-        padding: 0.2rem 0.8rem;
-      }
-    }
-
-    /* ===== BACKGROUND ANIMATION ===== */
-    .bg-pastel-animated {
-      background: linear-gradient(135deg, #fce4ec 0%, #f3e5f5 25%, #e8eaf6 50%, #f3e5f5 75%, #fce4ec 100%);
-      background-size: 400% 400%;
-      animation: gradientBG 15s ease infinite;
-    }
-    @keyframes gradientBG {
-      0% { background-position: 0% 50%; }
-      50% { background-position: 100% 50%; }
-      100% { background-position: 0% 50%; }
-    }
-
-    /* ===== TITLE GLOW ===== */
-    .title-glow {
-      text-shadow: 0 0 40px rgba(206, 147, 216, 0.15);
-    }
-
-    /* ===== FLOATING PARTICLES ===== */
-    .particle {
-      position: fixed;
-      border-radius: 50%;
-      pointer-events: none;
-      z-index: -1;
-      opacity: 0.3;
-      animation: floatParticle 20s infinite linear;
-    }
-    @keyframes floatParticle {
-      0% { transform: translate(0, 0) scale(1); opacity: 0.3; }
-      25% { transform: translate(100px, -50px) scale(1.2); opacity: 0.5; }
-      50% { transform: translate(50px, -100px) scale(0.8); opacity: 0.2; }
-      75% { transform: translate(-50px, -30px) scale(1.1); opacity: 0.4; }
-      100% { transform: translate(0, 0) scale(1); opacity: 0.3; }
+      .nav-modern { gap: 0.5rem; }
+      .nav-modern a { font-size: 0.65rem; }
+      .social-card { width: 100px; padding: 0.8rem 0.6rem; }
+      .social-card .icon-wrapper { width: 40px; height: 40px; font-size: 1.1rem; }
+      .social-card h3 { font-size: 0.75rem; }
+      .social-card p { font-size: 0.6rem; }
+      .project-img { height: 120px; }
+      .project-card h3 { font-size: 1rem; }
+      .project-card p { font-size: 0.8rem; }
     }
   </style>
 </head>
 <body>
-
-  <!-- Floating Particles -->
-  <div class="particle" style="width: 8px; height: 8px; background: #f06292; top: 10%; left: 5%; animation-duration: 18s;"></div>
-  <div class="particle" style="width: 12px; height: 12px; background: #ce93d8; top: 20%; right: 8%; animation-duration: 22s;"></div>
-  <div class="particle" style="width: 6px; height: 6px; background: #42a5f5; bottom: 30%; left: 3%; animation-duration: 16s;"></div>
-  <div class="particle" style="width: 10px; height: 10px; background: #ffd54f; bottom: 15%; right: 12%; animation-duration: 20s;"></div>
 
   <!-- ===== HEADER ===== -->
   <header class="header-glass flex justify-between items-center px-6 md:px-12 py-3 md:py-4">
@@ -553,58 +336,47 @@
   </header>
 
   <!-- ===== HERO ===== -->
-  <section id="home" class="relative min-h-screen flex items-center justify-center text-center overflow-hidden pt-20 bg-pastel-animated">
-    <div class="circle-deco circle-deco-1"></div>
-    <div class="circle-deco circle-deco-2"></div>
-    <div class="circle-deco circle-deco-3"></div>
-    <div class="circle-deco circle-deco-4"></div>
+  <section id="home" class="relative min-h-screen flex items-center justify-center text-center overflow-hidden pt-20 hero-bg">
+    <div class="floating-shape shape-1"></div>
+    <div class="floating-shape shape-2"></div>
+    <div class="floating-shape shape-3"></div>
     
     <div class="relative z-10 max-w-4xl mx-auto px-4 hero-float">
-      <div class="inline-block mb-6 px-8 py-3 bg-white/60 backdrop-blur-sm rounded-full border-2 border-pink-200/60 text-pink-500 text-sm font-bold tracking-wider pulse-glow">
-        <i class="fas fa-sparkles mr-2 text-purple-400"></i> FRONTEND DEVELOPER
+      <div class="inline-block mb-6 px-6 py-2.5 bg-white/80 backdrop-blur-sm rounded-full border border-pink-200/40 text-pink-600 text-xs font-semibold tracking-wider uppercase">
+        <i class="fas fa-code mr-2 text-pink-400"></i> Frontend Developer
       </div>
-      <h1 class="text-6xl md:text-7xl font-bold text-[#4a2c4a] tracking-tight leading-tight title-glow">
+      <h1 class="text-6xl md:text-7xl font-bold text-[#2d1b2d] tracking-tight leading-tight" style="font-family: 'Playfair Display', serif;">
         Sabrina
       </h1>
-      <h2 class="text-4xl md:text-5xl font-bold mt-3 bg-gradient-to-r from-pink-400 via-purple-400 to-blue-400 bg-clip-text text-transparent">
-        PORTOFOLIO
+      <h2 class="text-4xl md:text-5xl font-bold mt-3 bg-gradient-to-r from-pink-400 to-pink-500 bg-clip-text text-transparent" style="font-family: 'Playfair Display', serif;">
+        Portfolio
       </h2>
-      <p class="text-[#5a3a5a] mt-6 text-lg md:text-xl font-medium max-w-2xl mx-auto">
-        Creating <span class="text-pink-500 font-bold">beautiful</span> digital experiences with <span class="text-purple-500 font-bold">passion</span> &amp; <span class="text-blue-400 font-bold">creativity</span> ✨
-      </p>
-      <div class="mt-10 flex flex-wrap justify-center gap-5">
-        <a href="#about" class="btn-primary">
-          <i class="fas fa-sparkles mr-2"></i> Get Started
-        </a>
-        <a href="#projects" class="btn-outline">
-          <i class="fas fa-arrow-right mr-2"></i> View Work
-        </a>
+      <div class="mt-10 flex flex-wrap justify-center gap-4">
+        <a href="#about" class="btn-primary"><i class="fas fa-heart mr-2"></i> Get Started</a>
+        <a href="#projects" class="btn-outline"><i class="fas fa-arrow-right mr-2"></i> View Work</a>
       </div>
-      
-      <!-- Decorative flowers -->
-      <div class="mt-12 flex justify-center gap-8 text-2xl text-pink-300">
+      <div class="mt-12 flex justify-center gap-6 text-xl text-pink-300">
         <i class="fas fa-heart animate-pulse"></i>
-        <i class="fas fa-star text-yellow-300 animate-bounce"></i>
+        <i class="fas fa-star text-pink-200 animate-bounce"></i>
         <i class="fas fa-heart animate-pulse" style="animation-delay: 0.5s;"></i>
-        <i class="fas fa-star text-yellow-300 animate-bounce" style="animation-delay: 1s;"></i>
-        <i class="fas fa-heart animate-pulse" style="animation-delay: 1s;"></i>
+        <i class="fas fa-star text-pink-200 animate-bounce" style="animation-delay: 1s;"></i>
       </div>
     </div>
   </section>
 
   <!-- ===== ABOUT ===== -->
-  <section id="about" class="py-24 md:py-32 bg-white/30 backdrop-blur-sm overflow-hidden border-t border-pink-200/30 border-b border-purple-200/30">
+  <section id="about" class="py-24 md:py-32 section-bg-light border-t border-pink-200/10 border-b border-pink-200/10">
     <div class="max-w-6xl mx-auto flex flex-col md:flex-row items-center gap-16 md:gap-20 px-6">
       <div class="md:w-1/2">
-        <span class="text-sm font-bold text-pink-500 tracking-widest uppercase bg-pink-100/60 px-5 py-2 rounded-full inline-block mb-5 border-2 border-pink-200/60">
-          <i class="fas fa-user mr-2 text-purple-400"></i> About Me
+        <span class="text-xs font-semibold text-pink-500 tracking-widest uppercase bg-white/60 px-4 py-1.5 rounded-full inline-block mb-4 border border-pink-200/30">
+          <i class="fas fa-user mr-2 text-pink-400"></i> About Me
         </span>
-        <h2 class="text-4xl md:text-5xl font-bold text-[#4a2c4a] mb-6">
-          Hi, I'm <span class="bg-gradient-to-r from-pink-400 via-purple-400 to-blue-400 bg-clip-text text-transparent">Sabrina</span> ✨
+        <h2 class="text-4xl md:text-5xl font-bold text-[#2d1b2d] mb-6" style="font-family: 'Playfair Display', serif;">
+          Hi, I'm <span class="bg-gradient-to-r from-pink-400 to-pink-500 bg-clip-text text-transparent">Sabrina</span> 
         </h2>
-        <p class="text-[#5a3a5a] leading-relaxed text-lg">
-          Hello, my name is <span class="font-bold text-pink-500">Sabrina Rizki Aulia</span>, and you can call me <span class="font-bold text-purple-500">Bina</span>. 
-          I am a Software Engineering student at <span class="font-bold text-blue-400">Taruna Bhakti Vocational High School</span>. 
+        <p class="text-[#5a3a5a] leading-relaxed text-base font-light">
+          Hello, my name is <span class="font-semibold text-pink-500">Sabrina Rizki Aulia</span>, and you can call me <span class="font-semibold text-pink-400">Bina</span>. 
+          I am a Software Engineering student at <span class="font-semibold text-pink-300">Taruna Bhakti Vocational High School</span>. 
           I am passionate about web development and UI/UX design because I enjoy creating websites that are both visually appealing and user-friendly. 
           I have experience building web projects using HTML, CSS, Tailwind CSS, JavaScript, and basic database integration. 
           I am a fast learner, responsible, and always eager to improve my technical skills. 
@@ -612,16 +384,16 @@
           Thank you for your time, and I look forward to the opportunity to work with your company.
         </p>
         <div class="mt-8 flex flex-wrap gap-4">
-          <a href="CV/CV SABRINA RIZKI AULIA.pdf" target="_blank" rel="noopener noreferrer" class="btn-primary">
+          <a href="CV/CV SABRINA RIZKI AULIA.pdf" target="_blank" rel="noopener noreferrer" class="btn-primary text-sm">
             <i class="fas fa-download mr-2"></i> Download CV
           </a>
         </div>
       </div>
       <div class="md:w-1/2 flex justify-center">
         <div class="relative">
-          <div class="absolute -inset-6 bg-gradient-to-tr from-pink-300 via-purple-300 to-blue-300 rounded-full blur-3xl opacity-30 animate-pulse"></div>
-          <div class="absolute -inset-3 border-4 border-pink-200/50 rounded-full animate-spin-slow" style="animation: spin 10s linear infinite;"></div>
-          <img src="image/bina.jpg" alt="Sabrina Rizki Aulia" 
+          <div class="absolute -inset-6 bg-gradient-to-tr from-pink-200/40 via-pink-300/30 to-pink-400/20 rounded-full blur-3xl animate-pulse"></div>
+          <div class="absolute -inset-3 border border-pink-200/30 rounded-full animate-spin-slow" style="animation: spin 12s linear infinite;"></div>
+          <img src="image/bina.png" alt="Sabrina Rizki Aulia" 
                class="relative w-72 h-72 md:w-84 md:h-84 rounded-full object-cover shadow-2xl border-4 border-white/80" />
         </div>
       </div>
@@ -629,173 +401,81 @@
   </section>
 
   <!-- ===== SKILLS ===== -->
-  <section id="skills" class="py-24 md:py-32 bg-white/20 backdrop-blur-sm border-t border-purple-200/30 border-b border-blue-200/30">
+  <section id="skills" class="py-24 md:py-32 section-bg-white border-t border-pink-200/10 border-b border-pink-200/10">
     <div class="max-w-6xl mx-auto text-center px-6">
-      <h2 class="section-title mb-16">Skills & Expertise</h2>
-      <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-4 md:gap-6">
-        <div class="skill-card-modern">
-          <i class="fab fa-html5 skill-icon skill-html"></i>
-          <p>HTML</p>
-        </div>
-        <div class="skill-card-modern">
-          <i class="fab fa-css3-alt skill-icon skill-css"></i>
-          <p>CSS</p>
-        </div>
-        <div class="skill-card-modern">
-          <i class="fab fa-js skill-icon skill-js"></i>
-          <p>JavaScript</p>
-        </div>
-        <div class="skill-card-modern">
-          <i class="fab fa-react skill-icon skill-react"></i>
-          <p>React</p>
-        </div>
-        <div class="skill-card-modern">
-          <i class="fab fa-react skill-icon skill-reactnative"></i>
-          <p>React Native</p>
-        </div>
-        <div class="skill-card-modern">
-          <i class="fab fa-node-js skill-icon skill-node"></i>
-          <p>Node.js</p>
-        </div>
-        <div class="skill-card-modern">
-          <i class="fas fa-server skill-icon skill-express"></i>
-          <p>Express.js</p>
-        </div>
-        <div class="skill-card-modern">
-          <i class="fas fa-cube skill-icon skill-next"></i>
-          <p>Next.js</p>
-        </div>
-        <div class="skill-card-modern">
-          <i class="fas fa-database skill-icon skill-mysql"></i>
-          <p>MySQL</p>
-        </div>
-        <div class="skill-card-modern">
-          <i class="fas fa-cloud skill-icon skill-supabase"></i>
-          <p>Supabase</p>
-        </div>
-        <div class="skill-card-modern">
-          <i class="fab fa-tailwind skill-icon skill-tailwind"></i>
-          <p>Tailwind CSS</p>
-        </div>
-        <div class="skill-card-modern">
-          <i class="fab fa-git-alt skill-icon skill-git"></i>
-          <p>Git</p>
-        </div>
-        <div class="skill-card-modern">
-          <i class="fab fa-github skill-icon skill-github"></i>
-          <p>GitHub</p>
-        </div>
-        <div class="skill-card-modern">
-          <i class="fas fa-link skill-icon skill-restapi"></i>
-          <p>REST API</p>
-        </div>
-        <div class="skill-card-modern">
-          <i class="fab fa-figma skill-icon skill-figma"></i>
-          <p>Figma</p>
-        </div>
+      <h2 class="section-title mb-14">Skills & Expertise</h2>
+      <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-4 md:gap-5">
+        <div class="skill-card"><i class="fab fa-html5 skill-icon skill-html"></i><p>HTML</p></div>
+        <div class="skill-card"><i class="fab fa-css3-alt skill-icon skill-css"></i><p>CSS</p></div>
+        <div class="skill-card"><i class="fab fa-js skill-icon skill-js"></i><p>JavaScript</p></div>
+        <div class="skill-card"><i class="fab fa-react skill-icon skill-react"></i><p>React</p></div>
+        <div class="skill-card"><i class="fab fa-react skill-icon skill-reactnative"></i><p>React Native</p></div>
+        <div class="skill-card"><i class="fab fa-node-js skill-icon skill-node"></i><p>Node.js</p></div>
+        <div class="skill-card"><i class="fas fa-server skill-icon skill-express"></i><p>Express.js</p></div>
+        <div class="skill-card"><i class="fas fa-cube skill-icon skill-next"></i><p>Next.js</p></div>
+        <div class="skill-card"><i class="fas fa-database skill-icon skill-mysql"></i><p>MySQL</p></div>
+        <div class="skill-card"><i class="fas fa-cloud skill-icon skill-supabase"></i><p>Supabase</p></div>
+        <div class="skill-card"><i class="fab fa-tailwind skill-icon skill-tailwind"></i><p>Tailwind CSS</p></div>
+        <div class="skill-card"><i class="fab fa-git-alt skill-icon skill-git"></i><p>Git</p></div>
+        <div class="skill-card"><i class="fab fa-github skill-icon skill-github"></i><p>GitHub</p></div>
+        <div class="skill-card"><i class="fas fa-link skill-icon skill-restapi"></i><p>REST API</p></div>
+        <div class="skill-card"><i class="fab fa-figma skill-icon skill-figma"></i><p>Figma</p></div>
       </div>
     </div>
   </section>
 
-  <!-- ===== PROJECTS (Basic) ===== -->
-  <section id="projects" class="py-24 md:py-32 bg-white/30 backdrop-blur-sm overflow-hidden border-t border-pink-200/30 border-b border-purple-200/30">
+  <!-- ===== PROJECTS ===== -->
+  <section id="projects" class="py-24 md:py-32 section-bg-light border-t border-pink-200/10 border-b border-pink-200/10">
     <div class="max-w-6xl mx-auto px-6">
-      <div class="text-center mb-16">
+      <div class="text-center mb-14">
         <h2 class="section-title">Projects</h2>
-        <p class="text-[#5a3a5a] mt-6 text-lg">Some of my recent work and creative projects ✨</p>
+        <p class="text-[#5a3a5a] mt-6 text-base font-light">Some of my recent work and creative projects ✨</p>
       </div>
 
-      <!-- Project 1: Easy Help -->
-      <div class="flex flex-col md:flex-row items-center justify-center gap-12 mb-28 group">
-        <div class="flex gap-6 relative">
-          <div class="absolute -inset-4 bg-gradient-to-r from-pink-200/30 to-purple-200/30 rounded-3xl blur-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-700"></div>
-          <div class="relative z-10 overflow-hidden rounded-2xl shadow-2xl border-4 border-white/60 group-hover:border-pink-300 transition-all duration-500">
-            <img src="image/JP2.jpg" alt="Easy Help Desktop" class="project-img-desktop w-72 md:w-80 transition-transform duration-700 group-hover:scale-105">
-          </div>
-          <div class="relative z-10 overflow-hidden rounded-2xl shadow-xl border-4 border-white/60 group-hover:border-pink-300 transition-all duration-500 mt-8">
-            <img src="image/PJ3.jpg" alt="Easy Help Mobile" class="project-img-mobile w-32 md:w-36 transition-transform duration-700 group-hover:scale-105">
-          </div>
-        </div>
-        <div class="max-w-md text-center md:text-left transform transition-all duration-500 group-hover:translate-x-2">
-          <h3 class="text-3xl md:text-4xl font-bold text-[#4a2c4a] mb-3">Easy Help</h3>
-          <p class="text-[#5a3a5a] leading-relaxed text-sm md:text-base">A help platform designed to make it easier for users to find solutions to everyday problems. Built with a clean and intuitive interface.</p>
-          <div class="flex flex-wrap items-center justify-center md:justify-start gap-4 mt-6">
-            <a href="https://www.figma.com/design/wMtpLEuzW1Rb62DUMVDlJ5/Aplikasi-EasyHelp?node-id=0-1&p=f" target="_blank" rel="noopener noreferrer" class="btn-outline inline-block">
-              <i class="fas fa-external-link-alt mr-2"></i> See Project
-            </a>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+        <!-- Project 1 -->
+        <div class="project-card group">
+          <img src="image/JP2.jpg" alt="Easy Help" class="project-img">
+          <h3>Easy Help</h3>
+          <p>A help platform designed to make it easier for users to find solutions to everyday problems.</p>
+          <div class="mt-4 flex flex-wrap gap-3">
+            <a href="https://www.figma.com/design/wMtpLEuzW1Rb62DUMVDlJ5/Aplikasi-EasyHelp?node-id=0-1&p=f" target="_blank" class="btn-outline text-xs py-1.5 px-4">See Project</a>
           </div>
         </div>
-      </div>
 
-      <!-- Project 2: E-Commerce -->
-      <div class="flex flex-col md:flex-row-reverse items-center justify-center gap-12 mb-28 group">
-        <div class="flex gap-6 relative">
-          <div class="absolute -inset-4 bg-gradient-to-r from-blue-200/30 to-purple-200/30 rounded-3xl blur-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-700"></div>
-          <div class="relative z-10 overflow-hidden rounded-2xl shadow-2xl border-4 border-white/60 group-hover:border-blue-300 transition-all duration-500">
-            <img src="image/JP2.jpg" alt="E-Commerce Desktop" class="project-img-desktop w-72 md:w-80 transition-transform duration-700 group-hover:scale-105">
-          </div>
-          <div class="relative z-10 overflow-hidden rounded-2xl shadow-xl border-4 border-white/60 group-hover:border-blue-300 transition-all duration-500 mt-8">
-            <img src="image/PJ3.jpg" alt="E-Commerce Mobile" class="project-img-mobile w-32 md:w-36 transition-transform duration-700 group-hover:scale-105">
+        <!-- Project 2 -->
+        <div class="project-card group">
+          <img src="/image/ecommerce.jpeg" alt="E-Commerce" class="project-img">
+          <h3>E-Commerce Store</h3>
+          <p>A modern e-commerce platform with seamless shopping experience and secure checkout.</p>
+          <div class="mt-4 flex flex-wrap gap-3">
+            <a href="https://github.com/sabrina03112008/e-commerce-Bunnyshop" target="_blank" class="btn-outline text-xs py-1.5 px-4">See Project</a>
           </div>
         </div>
-        <div class="max-w-md text-center md:text-right transform transition-all duration-500 group-hover:-translate-x-2">
-          <h3 class="text-3xl md:text-4xl font-bold text-[#4a2c4a] mb-3">E-Commerce Store</h3>
-          <p class="text-[#5a3a5a] leading-relaxed text-sm md:text-base">A modern e-commerce platform with seamless shopping experience, product filtering, and secure checkout system.</p>
-          <div class="flex flex-wrap items-center justify-center md:justify-end gap-4 mt-6">
-            <a href="https://www.figma.com/design/wMtpLEuzW1Rb62DUMVDlJ5/Aplikasi-EasyHelp?node-id=0-1&p=f" target="_blank" rel="noopener noreferrer" class="btn-outline inline-block">
-              <i class="fas fa-external-link-alt mr-2"></i> See Project
-            </a>
-          </div>
-        </div>
-      </div>
 
-      <!-- Project 3: Library -->
-      <div class="flex flex-col md:flex-row items-center justify-center gap-12 mb-28 group">
-        <div class="flex gap-6 relative">
-          <div class="absolute -inset-4 bg-gradient-to-r from-yellow-200/30 to-pink-200/30 rounded-3xl blur-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-700"></div>
-          <div class="relative z-10 overflow-hidden rounded-2xl shadow-2xl border-4 border-white/60 group-hover:border-yellow-300 transition-all duration-500">
-            <img src="image/JP2.jpg" alt="Library Desktop" class="project-img-desktop w-72 md:w-80 transition-transform duration-700 group-hover:scale-105">
-          </div>
-          <div class="relative z-10 overflow-hidden rounded-2xl shadow-xl border-4 border-white/60 group-hover:border-yellow-300 transition-all duration-500 mt-8">
-            <img src="image/PJ3.jpg" alt="Library Mobile" class="project-img-mobile w-32 md:w-36 transition-transform duration-700 group-hover:scale-105">
+        <!-- Project 3 -->
+        <div class="project-card group">
+          <img src="/image/library.jpeg" alt="Library" class="project-img">
+          <h3>Library Management</h3>
+          <p>A digital library system for managing books, members, and transactions.</p>
+          <div class="mt-4 flex flex-wrap gap-3">
+            <a href="https://github.com/sabrina03112008/LibrarySmart" target="_blank" class="btn-outline text-xs py-1.5 px-4">See Project</a>
           </div>
         </div>
-        <div class="max-w-md text-center md:text-left transform transition-all duration-500 group-hover:translate-x-2">
-          <h3 class="text-3xl md:text-4xl font-bold text-[#4a2c4a] mb-3">Library Management</h3>
-          <p class="text-[#5a3a5a] leading-relaxed text-sm md:text-base">A digital library system for managing books, members, and transactions with an easy-to-use interface for both admins and users.</p>
-          <div class="flex flex-wrap items-center justify-center md:justify-start gap-4 mt-6">
-            <a href="https://www.figma.com/design/wMtpLEuzW1Rb62DUMVDlJ5/Aplikasi-EasyHelp?node-id=0-1&p=f" target="_blank" rel="noopener noreferrer" class="btn-outline inline-block">
-              <i class="fas fa-external-link-alt mr-2"></i> See Project
-            </a>
+
+        <!-- Project 4 -->
+        <div class="project-card group">
+          <img src="/image/lynn.jpeg" alt="Layanan Aduan" class="project-img">
+          <h3>Layanan Aduan</h3>
+          <p>A complaint reporting system with real-time status updates and efficient management.</p>
+          <div class="mt-4 flex flex-wrap gap-3">
+            <a href="https://github.com/sabrina03112008/Pengaduan-App" target="_blank" class="btn-outline text-xs py-1.5 px-4">See Project</a>
           </div>
         </div>
       </div>
 
-      <!-- Project 4: Layanan Aduan -->
-      <div class="flex flex-col md:flex-row-reverse items-center justify-center gap-12 group">
-        <div class="flex gap-6 relative">
-          <div class="absolute -inset-4 bg-gradient-to-r from-green-200/30 to-blue-200/30 rounded-3xl blur-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-700"></div>
-          <div class="relative z-10 overflow-hidden rounded-2xl shadow-2xl border-4 border-white/60 group-hover:border-green-300 transition-all duration-500">
-            <img src="image/JP2.jpg" alt="Layanan Aduan Desktop" class="project-img-desktop w-72 md:w-80 transition-transform duration-700 group-hover:scale-105">
-          </div>
-          <div class="relative z-10 overflow-hidden rounded-2xl shadow-xl border-4 border-white/60 group-hover:border-green-300 transition-all duration-500 mt-8">
-            <img src="image/PJ3.jpg" alt="Layanan Aduan Mobile" class="project-img-mobile w-32 md:w-36 transition-transform duration-700 group-hover:scale-105">
-          </div>
-        </div>
-        <div class="max-w-md text-center md:text-right transform transition-all duration-500 group-hover:-translate-x-2">
-          <h3 class="text-3xl md:text-4xl font-bold text-[#4a2c4a] mb-3">Layanan Aduan</h3>
-          <p class="text-[#5a3a5a] leading-relaxed text-sm md:text-base">A complaint reporting system that allows users to submit, track, and manage complaints efficiently with real-time status updates.</p>
-          <div class="flex flex-wrap items-center justify-center md:justify-end gap-4 mt-6">
-            <a href="https://www.figma.com/design/wMtpLEuzW1Rb62DUMVDlJ5/Aplikasi-EasyHelp?node-id=0-1&p=f" target="_blank" rel="noopener noreferrer" class="btn-outline inline-block">
-              <i class="fas fa-external-link-alt mr-2"></i> See Project
-            </a>
-          </div>
-        </div>
-      </div>
-
-      <!-- View All Projects Button -->
-      <div class="text-center mt-20">
-        <a href="#" class="bg-white/60 backdrop-blur-sm border-2 border-purple-200/50 text-purple-600 px-8 py-3 rounded-full font-semibold hover:bg-purple-100 hover:border-purple-400 hover:shadow-lg hover:shadow-purple-200/30 transition-all duration-300 inline-flex items-center gap-2 group">
+      <div class="text-center mt-10">
+        <a href="#" class="bg-white/80 backdrop-blur-sm border border-pink-200/40 text-pink-600 px-8 py-3 rounded-full font-medium hover:bg-pink-50 hover:border-pink-400 hover:shadow-lg transition-all duration-300 inline-flex items-center gap-2 group text-sm">
           <span>View All Projects</span>
           <i class="fas fa-arrow-right group-hover:translate-x-1 transition-transform duration-300"></i>
         </a>
@@ -803,83 +483,45 @@
     </div>
   </section>
 
-  <!-- ===== CONTACT / SOCIAL MEDIA ===== -->
-  <section id="contact" class="py-24 md:py-32 bg-white/20 backdrop-blur-sm border-t border-blue-200/30">
+  <!-- ===== CONTACT / SOCIAL ===== -->
+  <section id="contact" class="py-24 md:py-32 section-bg-white border-t border-pink-200/10">
     <div class="max-w-6xl mx-auto px-6 text-center">
-      <span class="text-sm font-bold text-blue-400 tracking-widest uppercase bg-blue-100/60 px-5 py-2 rounded-full inline-block mb-5 border-2 border-blue-200/60">
-        <i class="fas fa-paper-plane mr-2 text-pink-400"></i> LET'S CONNECT
-      </span>
-      <h2 class="section-title">Let's Connect To My Social Media</h2>
-      <p class="text-[#5a3a5a] mt-6 text-lg">Follow and connect with me on social media! ✨</p>
+      <h2 class="section-title">Let's Connect</h2>
+      <p class="text-[#5a3a5a] mt-6 text-base font-light">Follow and connect with me on social media!</p>
       
-      <!-- Social Media Cards -->
-      <div class="flex flex-wrap justify-center gap-6 mt-10">
-        <!-- GitHub -->
+      <div class="flex flex-wrap justify-center gap-5 mt-10">
         <a href="https://github.com/sabrina03112008" target="_blank" class="social-card group">
-          <div class="icon-wrapper github">
-            <i class="fab fa-github"></i>
-          </div>
+          <div class="icon-wrapper github"><i class="fab fa-github"></i></div>
           <h3>GitHub</h3>
           <p>@sabrina03112008</p>
-          <span class="follow-btn"><i class="fas fa-external-link-alt mr-1"></i> View</span>
         </a>
-
-        <!-- WhatsApp -->
         <a href="https://wa.me/628816807341" target="_blank" class="social-card group">
-          <div class="icon-wrapper whatsapp">
-            <i class="fab fa-whatsapp"></i>
-          </div>
+          <div class="icon-wrapper whatsapp"><i class="fab fa-whatsapp"></i></div>
           <h3>WhatsApp</h3>
           <p>+62 881-6807-341</p>
-          <span class="follow-btn"><i class="fas fa-comment mr-1"></i> Chat</span>
         </a>
-
-        <!-- Instagram -->
         <a href="https://instagram.com/binaaulia38" target="_blank" class="social-card group">
-          <div class="icon-wrapper instagram">
-            <i class="fab fa-instagram"></i>
-          </div>
+          <div class="icon-wrapper instagram"><i class="fab fa-instagram"></i></div>
           <h3>Instagram</h3>
           <p>@binaaulia38</p>
-          <span class="follow-btn"><i class="fas fa-heart mr-1"></i> Follow</span>
         </a>
       </div>
     </div>
 
-    <!-- ===== FOOTER ===== -->
-    <footer class="mt-16 pt-8 border-t-2 border-pink-200/30 max-w-6xl mx-auto px-6 text-center">
-      <p class="text-[#5a3a5a] text-sm tracking-wide">
-        <i class="far fa-copyright mr-1"></i> 2026 Made With <i class="fas fa-heart text-pink-400 animate-pulse"></i> By <span class="text-pink-500 font-bold">Sabrina</span>
+    <footer class="mt-16 pt-8 border-t border-pink-200/20 max-w-6xl mx-auto px-6 text-center">
+      <p class="text-[#5a3a5a] text-sm tracking-wide font-light">
+        <i class="far fa-copyright mr-1"></i> 2026 Made With <i class="fas fa-heart text-pink-400 animate-pulse"></i> By <span class="text-pink-500 font-semibold">Sabrina</span>
       </p>
-      <p class="text-[#5a3a5a] text-xs mt-2">✨ Pastel &amp; Pretty ✨</p>
+      <p class="text-[#5a3a5a] text-xs mt-2 font-light">✨ Designed with Love ✨</p>
     </footer>
   </section>
 
   <script>
-    // Smooth scroll untuk semua anchor
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
       anchor.addEventListener('click', function (e) {
         e.preventDefault();
         const target = document.querySelector(this.getAttribute('href'));
-        if (target) {
-          target.scrollIntoView({
-            behavior: 'smooth',
-            block: 'start'
-          });
-        }
-      });
-    });
-
-    // Floating particles efek
-    document.addEventListener('mousemove', function(e) {
-      const particles = document.querySelectorAll('.particle');
-      const x = e.clientX / window.innerWidth;
-      const y = e.clientY / window.innerHeight;
-      particles.forEach((particle, i) => {
-        const speed = 20 + i * 10;
-        const moveX = (x - 0.5) * speed;
-        const moveY = (y - 0.5) * speed;
-        particle.style.transform = `translate(${moveX}px, ${moveY}px)`;
+        if (target) target.scrollIntoView({ behavior: 'smooth', block: 'start' });
       });
     });
   </script>
